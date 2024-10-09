@@ -3,14 +3,13 @@
     justify-content: center;
     align-items: center;
     gap: 20px;
+    padding: 35px;
 }
 .stats-card {
-    width: 35%;
-    float: left;
-    margin: 15px;
+    width: 430px;
     border-radius: 5px;
     padding: 10px; 
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 6px;
   }
   .top {
     display: flex;
