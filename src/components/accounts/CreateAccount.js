@@ -29,7 +29,7 @@ const CreateAccount = () => {
             <Link to="">CREATE ACCOUNT</Link>
           </div>
           <div className="actions">
-            <Link to="">VIEW ALL ACCOUNTS</Link>
+            <Link to="/accounts">VIEW ALL ACCOUNTS</Link>
           </div>
         </div>
       </div>
