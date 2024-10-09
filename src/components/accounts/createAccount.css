@@ -64,11 +64,11 @@ select {
   justify-content: center;
   align-items: center;
   text-align: center;
+  gap: 20px;
 }
 
 .add-account-footer .actions {
   border-radius: 4px;
-  width: 30%;
   padding: 5px;
   font-size: 12px;
 }
