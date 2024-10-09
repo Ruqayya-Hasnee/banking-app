@@ -5,7 +5,6 @@
     gap: 20px;
 }
 .stats-card {
-    min-height: 220px;
     width: 35%;
     float: left;
     margin: 15px;
@@ -15,8 +14,10 @@
   }
   .top {
     display: flex;
-    justify-content: space-between; 
-    align-items: center; 
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 5px 6px;
+    box-shadow: 0 2px 3px -4px gray;
   }
   .actions {
     display: flex;
@@ -32,8 +33,13 @@
     cursor: pointer;
   }
   
-  .center {
-    text-align: center;
+  .stats-card-content {
+    height: 125px;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 15px;
   }
   
   p {

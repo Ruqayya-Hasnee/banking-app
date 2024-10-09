@@ -11,10 +11,8 @@ const StatsCard = (props) => {
           <Link to={props.viewAllLink}>View All</Link>
         </div>
       </div>
-      <hr />
-      <div className="center">
+      <div className="stats-card-content">
         <p>1</p>
-        <p>{props.title}</p>
       </div>
     </div>
   );
