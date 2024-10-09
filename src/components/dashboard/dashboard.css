@@ -1,0 +1,43 @@
+.dashboard-wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+.stats-card {
+    min-height: 220px;
+    width: 35%;
+    float: left;
+    background-color: bisque;
+    margin: 15px;
+    border-radius: 5px;
+    padding: 10px; 
+  }
+  .top {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center; 
+  }
+  .button {
+    display: flex;
+    gap: 10px;
+  }
+  button {
+    background-color: #9b9da8;
+    color: white;
+    border: none;
+    padding: 8px 10px;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+  
+  .center {
+    text-align: center;
+  }
+  
+  p {
+    font-size: 18px;
+    color: #333;
+    margin: 0; 
+  }
+  
