@@ -8,19 +8,20 @@
     min-height: 220px;
     width: 35%;
     float: left;
-    background-color: bisque;
     margin: 15px;
     border-radius: 5px;
     padding: 10px; 
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   }
   .top {
     display: flex;
     justify-content: space-between; 
     align-items: center; 
   }
-  .button {
+  .actions {
     display: flex;
-    gap: 10px;
+    gap: 15px;
+    font-size: 12px;
   }
   button {
     background-color: #9b9da8;
@@ -41,3 +42,6 @@
     margin: 0; 
   }
   
+.title {
+    text-transform: capitalize;
+  }

@@ -5,9 +5,9 @@ const StatsCard = (props) => {
   return (
     <div className="stats-card">
       <div className="top">
-        <p>{props.title}</p>
-        <div className="button">
-          <button>+Add new account</button>
+        <p className="title">{props.title}</p>
+        <div className="actions">
+          {props.createLink ? <Link to={props.createLink}>+Add</Link> : ''}
           <Link to={props.viewAllLink}>View All</Link>
         </div>
       </div>
