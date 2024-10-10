@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 
 const StatsCard = (props) => {
-    console.log(props)
   return (
     <div className="stats-card">
       <div className="top">

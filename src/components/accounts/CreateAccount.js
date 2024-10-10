@@ -17,6 +17,7 @@ const CreateAccount = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    
     const newAccount = {
       id: generateId(),
       name: name,
@@ -48,7 +49,7 @@ const CreateAccount = () => {
             <label>Full Name:</label>
             <input
               type="text"
-              placeholder="Enter full name here"
+              placeholder="Enter full name here.."
               className="create-input"
               value={name}
               name="name"
@@ -60,7 +61,7 @@ const CreateAccount = () => {
           <div className="input-wrapper">
             <label>Account Type:</label>
             <select
-              className="select"
+              className="Enter type here..."
               name="type"
               value={type}
               onChange={handleTypeChange}
