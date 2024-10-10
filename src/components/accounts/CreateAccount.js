@@ -21,6 +21,7 @@ const CreateAccount = () => {
       id: generateId(),
       name: name,
       type: type,
+      amount: 0,
       registeredAt: new Date(),
     };
 

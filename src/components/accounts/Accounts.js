@@ -1,6 +1,15 @@
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 const Accounts = () => {
+  const [accounts, setAccounts] = useState([])
+
+  useEffect(() => {
+    console.log(1234567890)
+    const accounts = JSON.parse(localStorage.getItem("accounts"))
+    setAccounts(accounts ? accounts : [])
+  }, []);
+
   return (
     <div className="table-wrapper">
       <div className="wrapper">
@@ -18,39 +27,19 @@ const Accounts = () => {
             <th>Balance</th>
             <th>Actions</th>
           </tr>
-          <tr>
-            <td>6568749807</td>
-            <td>Ammar</td>
-            <td>10/9/2024</td>
-            <td>Saving</td>
-            <td>1000$</td>
+          {
+            accounts.map((acc) => <tr>
+            <td>{acc.id}</td>
+            <td>{acc.name}</td>
+            <td>{new Date(acc.registeredAt).toDateString()}</td>
+            <td>{acc.type}</td>
+            <td>{acc.amount}</td>
             <td className="table-buttons">
-              <Link to="/accounts/:accountId/deposit">Deposit</Link>
-              <Link to="/accounts/:accountId/withdraw">Withdraw</Link>
+              <Link to={`/accounts/${acc.id}/deposit`}>Deposit</Link>
+              <Link to={`/accounts/${acc.id}/withdraw`}>Withdraw</Link>
             </td>
-          </tr>
-          <tr>
-            <td>6568749807</td>
-            <td>Ammar</td>
-            <td>10/9/2024</td>
-            <td>Saving</td>
-            <td>1000$</td>
-            <td className="table-buttons">
-              <Link to="/accounts/:accountId/deposit">Deposit</Link>
-              <Link to="/accounts/:accountId/withdraw">Withdraw</Link>
-            </td>
-          </tr>
-          <tr>
-            <td>6568749807</td>
-            <td>Ammar</td>
-            <td>10/9/2024</td>
-            <td>Saving</td>
-            <td>1000$</td>
-            <td className="table-buttons">
-              <Link to="/accounts/:accountId/deposit">Deposit</Link>
-              <Link to="/accounts/:accountId/withdraw">Withdraw</Link>
-            </td>
-          </tr>
+          </tr>)
+          }
         </table>
       </div>
     </div>
