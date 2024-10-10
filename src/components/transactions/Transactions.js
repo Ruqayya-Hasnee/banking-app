@@ -1,11 +1,10 @@
 import { Link } from "react-router-dom";
-import "./transactions.css";
 
 const Transactions = () => {
   return (
-    <div className="transactions-wrapper">
+    <div className="table-wrapper">
       <div className="wrapper">
-        <div className="transactions-action">
+        <div className="table-action">
           <Link to="/">Back to dashboard</Link>
         </div>
         <p>Transactions</p>

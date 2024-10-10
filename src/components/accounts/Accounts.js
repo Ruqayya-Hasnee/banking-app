@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom";
-import "./account.css";
+
 const Accounts = () => {
   return (
-    <div className="account-wrapper">
+    <div className="table-wrapper">
       <div className="wrapper">
-        <div className="account-actions">
+        <div className="table-actions">
           <Link to="/">Back to dashboard</Link>
           <Link to="/accounts/create">+Add new account</Link>
         </div>
@@ -24,7 +24,7 @@ const Accounts = () => {
             <td>10/9/2024</td>
             <td>Saving</td>
             <td>1000$</td>
-            <td className="account-buttons">
+            <td className="table-buttons">
               <Link to="/accounts/:accountId/deposit">Deposit</Link>
               <Link to="/accounts/:accountId/withdraw">Withdraw</Link>
             </td>
@@ -35,7 +35,7 @@ const Accounts = () => {
             <td>10/9/2024</td>
             <td>Saving</td>
             <td>1000$</td>
-            <td className="account-buttons">
+            <td className="table-buttons">
               <Link to="/accounts/:accountId/deposit">Deposit</Link>
               <Link to="/accounts/:accountId/withdraw">Withdraw</Link>
             </td>
@@ -46,7 +46,7 @@ const Accounts = () => {
             <td>10/9/2024</td>
             <td>Saving</td>
             <td>1000$</td>
-            <td className="account-buttons">
+            <td className="table-buttons">
               <Link to="/accounts/:accountId/deposit">Deposit</Link>
               <Link to="/accounts/:accountId/withdraw">Withdraw</Link>
             </td>
