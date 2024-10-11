@@ -72,3 +72,7 @@ select {
   padding: 5px;
   font-size: 12px;
 }
+
+.add-account-footer .actions button {
+  cursor: pointer;
+}
