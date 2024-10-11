@@ -27,6 +27,25 @@ const Transaction = (props) => {
       description: description,
       time: new Date(),
     };
+ 
+    const accounts = JSON.parse(localStorage.getItem("accounts"));
+    const selectedAccountIndex = accounts.findIndex((acc) => {
+       return acc.id == params.accountId
+    }) 
+    const selectedAccountBalance = accounts[selectedAccountIndex].amount
+    if (props.type == "DEPOSIT") {
+     accounts[selectedAccountIndex].amount =  selectedAccountBalance  + Number(amount)
+    }
+   else {
+    if (selectedAccountBalance < Number(amount)) {
+      alert("Insufficient balance")
+      return 
+    }
+     accounts[selectedAccountIndex].amount =   selectedAccountBalance - Number(amount)
+   }
+   localStorage.setItem("accounts", JSON.stringify(accounts))
+
+
     const transactions = JSON.parse(localStorage.getItem("transactions"));
     if (transactions) {
       transactions.push(newTransaction);
