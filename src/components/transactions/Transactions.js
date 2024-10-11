@@ -12,7 +12,7 @@ const Transactions = () => {
   return (
     <div className="table-wrapper">
       <div className="wrapper">
-        <div className="table-action">
+        <div className="table-actions">
           <Link to="/">Back to dashboard</Link>
         </div>
         <p>Transactions</p>

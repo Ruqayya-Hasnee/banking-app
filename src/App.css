@@ -39,6 +39,7 @@ td {
   box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 6px;
   padding: 12px;
   font-size: 12px;
+  min-width: 85px;
 }
 
 .table-buttons {
@@ -50,4 +51,16 @@ td {
 .table-buttons a {
   font-size: 12px;
   cursor: pointer;
+}
+
+@media only screen and (max-width: 767px) {
+  /* CSS rules for small screens */
+  .wrapper {
+    max-width: 100%;
+  }
+
+  table {
+    display: block;
+    overflow: auto;
+  }
 }
