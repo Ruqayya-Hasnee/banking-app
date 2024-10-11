@@ -53,7 +53,7 @@ select {
   outline: none;
   font-size: 1em;
   flex: 1;
-  cursor: pointer;
+  /* cursor: pointer; */
   box-shadow: rgba(0, 0, 0, 0.15) 0px 1px 2px;
   font-size: 13px;
   padding: 10px;

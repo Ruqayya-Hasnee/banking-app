@@ -1,6 +1,14 @@
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 const Transactions = () => {
+  const [transactions, setTransactions] = useState([]);
+
+  useEffect(() => {
+    const transactions = JSON.parse(localStorage.getItem("transactions"));
+    setTransactions(transactions ? transactions : []);
+  }, []);
+
   return (
     <div className="table-wrapper">
       <div className="wrapper">
@@ -16,20 +24,15 @@ const Transactions = () => {
             <th>Type</th>
             <th>Amount</th>
           </tr>
-          <tr>
-            <td>6129667674</td>
-            <td>10/9/2024, 12:04:07 PM</td>
-            <td>6568749807</td>
-            <td>credit</td>
-            <td>1000</td>
-          </tr>
-          <tr>
-            <td>6129667674</td>
-            <td>10/9/2024, 12:04:07 PM</td>
-            <td>6568749807</td>
-            <td>debit</td>
-            <td>1000</td>
-          </tr>
+           {transactions.map((trans) => (
+            <tr>
+              <td>{trans.id}</td>
+              <td>{new Date(trans.time).toDateString()}</td>
+              <td>{trans.accountId}</td>
+              <td>{trans.type}</td>
+              <td>{trans.amount}</td>
+            </tr>
+          ))}
         </table>
       </div>
     </div>

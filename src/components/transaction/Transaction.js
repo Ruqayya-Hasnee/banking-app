@@ -35,6 +35,9 @@ const Transaction = (props) => {
       localStorage.setItem("transactions", JSON.stringify([newTransaction]));
     }
 
+    // TODO: update amount value saved in accounts
+    // TODO: Basicaly we have account Id here so we will find accounts in accounts array and update amount for that only
+
     // Reset
     setAmount("");
     setDescription("");
