@@ -11,7 +11,7 @@ const StatsCard = (props) => {
         </div>
       </div>
       <div className="stats-card-content">
-        <p>1</p>
+        <p>{props.count}</p>
       </div>
     </div>
   );
