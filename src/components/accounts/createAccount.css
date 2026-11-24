@@ -188,3 +188,14 @@
     width: 100%;
   }
 }
+
+@media only screen and (max-width: 767px) {
+  /* 16px stops iOS from zooming in when a field is focused */
+  .account-form-wrapper .create-input {
+    font-size: 16px;
+  }
+
+  .account-submit-action {
+    flex: none;
+  }
+}

@@ -226,3 +226,48 @@
     height: 70px;
   }
 }
+
+.top {
+  gap: 8px;
+}
+
+.actions {
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+.stats-icon {
+  flex-shrink: 0;
+}
+
+@media only screen and (max-width: 400px) {
+  .stats-card-heading {
+    gap: 8px;
+  }
+
+  .stats-icon {
+    width: 36px;
+    height: 36px;
+  }
+
+  .stats-card .title {
+    font-size: 15px;
+  }
+
+  .stats-subtitle {
+    font-size: 9px;
+  }
+
+  .actions {
+    gap: 5px;
+    font-size: 11px;
+  }
+
+  .actions a {
+    padding: 7px 8px;
+  }
+
+  .stats-card-content {
+    padding: 24px 20px;
+  }
+}

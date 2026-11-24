@@ -29,11 +29,11 @@ const Transactions = () => {
           <tbody>
             {transactions.map((trans) => (
               <tr key={trans.id}>
-                <td><span className="table-id">#{String(trans.id).slice(-6)}</span></td>
-                <td>{new Date(trans.time).toDateString()}</td>
-                <td>{trans.accountId}</td>
-                <td><span className={`transaction-type ${String(trans.type).toLowerCase()}`}>{trans.type}</span></td>
-                <td><strong>${Number(trans.amount).toLocaleString()}</strong></td>
+                <td data-label="TransactionId"><span className="table-id">#{String(trans.id).slice(-6)}</span></td>
+                <td data-label="Time">{new Date(trans.time).toDateString()}</td>
+                <td data-label="Account#">{trans.accountId}</td>
+                <td data-label="Type"><span className={`transaction-type ${String(trans.type).toLowerCase()}`}>{trans.type}</span></td>
+                <td data-label="Amount"><strong>${Number(trans.amount).toLocaleString()}</strong></td>
               </tr>
             ))}
           </tbody>

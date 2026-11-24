@@ -103,3 +103,22 @@
     font-size: 11px;
   }
 }
+
+@media only screen and (max-width: 400px) {
+  .navbar {
+    padding: 0 10px;
+  }
+
+  .navbar-title {
+    font-size: 18px;
+  }
+
+  .navbar ul {
+    gap: 2px;
+  }
+
+  .navbar ul li a {
+    padding: 8px 6px;
+    font-size: 10px;
+  }
+}

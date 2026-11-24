@@ -16,7 +16,7 @@ a {
 
 .wrapper {
   width: 800px;
-  overflow: hidden;
+  overflow-x: auto;
   border: 1px solid rgba(255, 255, 255, 0.92);
   border-radius: 22px;
   padding: 24px;
@@ -156,12 +156,107 @@ td:last-child {
 
 @media only screen and (max-width: 767px) {
   /* CSS rules for small screens */
-  .wrapper {
-    max-width: 100%;
+  .table-wrapper {
+    padding: 20px 14px;
   }
 
-  table {
+  .wrapper {
+    max-width: 100%;
+    padding: 18px 14px;
+  }
+
+  .table-actions {
+    gap: 8px;
+  }
+
+  .table-actions a {
+    padding: 9px 8px;
+    font-size: 11px;
+    white-space: nowrap;
+  }
+
+  /* Each row becomes a card, labelled by the cell's data-label */
+  table,
+  tbody,
+  tr,
+  td {
     display: block;
-    overflow: auto;
+  }
+
+  thead {
+    display: none;
+  }
+
+  tbody tr {
+    margin-bottom: 18px;
+    overflow: hidden;
+    border: 1px solid #dcd8f5;
+    border-radius: 14px;
+    background: #fff;
+    box-shadow: 0 6px 16px rgba(38, 43, 70, 0.07);
+  }
+
+  tbody tr:last-child {
+    margin-bottom: 0;
+  }
+
+  td,
+  td:first-child,
+  td:last-child {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    min-width: 0;
+    border: 0;
+    border-radius: 0;
+    padding: 10px 14px;
+    text-align: right;
+    overflow-wrap: anywhere;
+  }
+
+  td:not(:last-child) {
+    border-bottom: 1px solid #f0f1f5;
+  }
+
+  /* Tinted header strip marks where each record starts */
+  tbody tr td:first-child,
+  tbody tr:hover td:first-child {
+    border-bottom-color: #dcd8f5;
+    background: #e6e2ff;
+  }
+
+  td:first-child::before,
+  td:first-child .table-id {
+    color: #5145b0;
+  }
+
+  td::before {
+    content: attr(data-label);
+    flex-shrink: 0;
+    color: #7d8294;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  td.table-buttons {
+    gap: 8px;
+  }
+
+  td.table-buttons::before {
+    content: none;
+  }
+
+  .table-buttons a {
+    flex: 1;
+    padding: 11px 10px;
+    text-align: center;
+  }
+
+  .account-type,
+  .transaction-type {
+    text-align: center;
   }
 }

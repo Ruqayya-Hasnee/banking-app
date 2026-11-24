@@ -31,11 +31,11 @@ const Accounts = () => {
           <tbody>
             {accounts.map((acc) => (
               <tr key={acc.id}>
-                <td><span className="table-id">#{String(acc.id).slice(-6)}</span></td>
-                <td>{acc.name}</td>
-                <td>{new Date(acc.registeredAt).toDateString()}</td>
-                <td><span className={`account-type ${String(acc.type).toLowerCase()}`}>{acc.type}</span></td>
-                <td><strong>${Number(acc.amount).toLocaleString()}</strong></td>
+                <td data-label="Account #"><span className="table-id">#{String(acc.id).slice(-6)}</span></td>
+                <td data-label="Name">{acc.name}</td>
+                <td data-label="Registered">{new Date(acc.registeredAt).toDateString()}</td>
+                <td data-label="Account Type"><span className={`account-type ${String(acc.type).toLowerCase()}`}>{acc.type}</span></td>
+                <td data-label="Balance"><strong>${Number(acc.amount).toLocaleString()}</strong></td>
                 <td className="table-buttons">
                   <Link to={`/accounts/${acc.id}/deposit`}>Deposit</Link>
                   <Link to={`/accounts/${acc.id}/withdraw`}>Withdraw</Link>

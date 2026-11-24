@@ -315,12 +315,13 @@
   }
 
   .transaction-form-wrapper {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     min-height: auto;
   }
 
   .transaction-spatial-panel {
     height: 150px;
+    grid-template-rows: 150px;
   }
 
   .spatial-stack {
@@ -337,6 +338,15 @@
 
   .add-transaction-footer {
     align-items: stretch;
+  }
+
+  .transaction-secondary-action {
+    align-self: center;
+  }
+
+  /* 16px stops iOS from zooming in when a field is focused */
+  .transaction-input {
+    font-size: 16px;
   }
 
   .transaction-primary-action {
