@@ -66,56 +66,84 @@ const Transaction = (props) => {
   return (
     <div className="create-transaction-wrapper">
       <div className="transaction-form-wrapper">
-        <p className="top-of-transaction-form">Enter Transactions Details</p>
-        <form className="transaction-form" onSubmit={handleSubmit}>
-          <div className="input-wrapper">
-            <label>Amount:</label>
-            <input
-              type="number"
-              placeholder="Enter amount"
-              className="transaction-input"
-              name="amount"
-              value={amount}
-              onChange={handleAmountChange}
-              required
-              min={1}
-            />
-          </div>
-          <div className="input-wrapper">
-            <label>Type:</label>
-            <select
-              className="transaction-input"
-              name="type"
-              value={props.type}
-              disabled
-            >
-              <option value="">Select Type</option>
-              <option value="DEPOSIT">Deposit</option>
-              <option value="WITHDRAW">Withdraw</option>
-            </select>
-          </div>
-          <div className="input-wrapper">
-            <label>Description:</label>
-            <input
-              type="text"
-              placeholder="Enter description here..."
-              className="transaction-input"
-              name="description"
-              value={description}
-              onChange={handleDescriptionChange}
-              required
-              minLength={5}
-            />
-          </div>
-          <div className="add-transaction-footer">
-            <div className="transaction-actions">
-              <button type="submit">Enter</button>
-            </div>
-            <div className="transaction-actions">
-              <Link to="/transactions">View all transactions</Link>
+        <div className="transaction-spatial-panel" aria-hidden="true">
+          <div className="spatial-orb spatial-orb-one"></div>
+          <div className="spatial-orb spatial-orb-two"></div>
+          <div className="spatial-stack">
+            <div className="spatial-card spatial-card-back"></div>
+            <div className="spatial-card spatial-card-front">
+              <span>ACCOUNT</span>
+              <strong>•••• {String(params.accountId).slice(-4)}</strong>
             </div>
           </div>
-        </form>
+        </div>
+        <div className="transaction-form-content">
+          <div className="top-of-transaction-form">
+            <span className={`transaction-type-badge ${props.type.toLowerCase()}`}>
+              {props.type}
+            </span>
+            <div>
+              <p>Transaction</p>
+              <h1>{props.type === "DEPOSIT" ? "Add funds" : "Withdraw funds"}</h1>
+            </div>
+          </div>
+          <form className="transaction-form" onSubmit={handleSubmit}>
+            <div className="input-wrapper">
+              <label htmlFor="transactionAmount">Amount</label>
+              <div className="transaction-input-shell">
+                <span>$</span>
+                <input
+                  id="transactionAmount"
+                  type="number"
+                  placeholder="0.00"
+                  className="transaction-input"
+                  name="amount"
+                  value={amount}
+                  onChange={handleAmountChange}
+                  required
+                  min={1}
+                />
+              </div>
+            </div>
+            <div className="input-wrapper">
+              <label htmlFor="transactionType">Type</label>
+              <select
+                id="transactionType"
+                className="transaction-input"
+                name="type"
+                value={props.type}
+                disabled
+              >
+                <option value="">Select Type</option>
+                <option value="DEPOSIT">Deposit</option>
+                <option value="WITHDRAW">Withdraw</option>
+              </select>
+            </div>
+            <div className="input-wrapper">
+              <label htmlFor="transactionDescription">Description</label>
+              <input
+                id="transactionDescription"
+                type="text"
+                placeholder="What is this for?"
+                className="transaction-input"
+                name="description"
+                value={description}
+                onChange={handleDescriptionChange}
+                required
+                minLength={5}
+              />
+            </div>
+            <div className="add-transaction-footer">
+              <Link className="transaction-secondary-action" to="/transactions">
+                View all
+              </Link>
+              <button className="transaction-primary-action" type="submit">
+                <span>{props.type === "DEPOSIT" ? "Add funds" : "Withdraw"}</span>
+                <span aria-hidden="true">→</span>
+              </button>
+            </div>
+          </form>
+        </div>
       </div>
     </div>
   );

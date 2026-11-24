@@ -5,52 +5,153 @@ a {
 .table-wrapper {
   display: flex;
   justify-content: center;
+  align-items: flex-start;
   padding: 35px;
+  min-height: calc(100vh - 68px);
+  background:
+    radial-gradient(circle at 12% 18%, rgba(101, 88, 217, 0.08), transparent 24rem),
+    radial-gradient(circle at 88% 82%, rgba(85, 190, 169, 0.08), transparent 22rem),
+    #f6f7fa;
 }
+
 .wrapper {
   width: 800px;
-  border-radius: 5px;
-  padding: 20px;
-  box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 6px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.92);
+  border-radius: 22px;
+  padding: 24px;
+  background: var(--surface);
+  box-shadow:
+    0 22px 58px rgba(38, 43, 70, 0.11),
+    0 5px 16px rgba(38, 43, 70, 0.05),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(16px);
 }
+
 .table-actions {
   display: flex;
   justify-content: space-between;
   font-size: 12px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--line);
 }
+
+.table-actions a {
+  border-radius: 9px;
+  padding: 9px 11px;
+  background: var(--primary-light);
+  font-weight: 700;
+}
+
+.table-actions a:first-child::before {
+  content: "←";
+  margin-right: 6px;
+}
+
 .wrapper p {
   text-align: center;
+  margin: 18px 0 10px;
+  color: var(--ink);
+  font-size: 20px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
 }
 
 table {
   width: 100%;
   padding: 10px 0px;
+  border-collapse: separate;
+  border-spacing: 0 6px;
 }
 
 th {
   text-align: center;
-  font-family: "Courier New", Courier, monospace;
-  box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 6px;
-  padding: 12px;
+  padding: 10px 12px;
+  color: #979bab;
+  background: transparent;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
 td {
   text-align: center;
-  box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 6px;
+  border-top: 1px solid #f0f1f5;
+  border-bottom: 1px solid #f0f1f5;
+  background: #fbfbfd;
   padding: 12px;
+  color: #4f5364;
   font-size: 12px;
   min-width: 85px;
+  transition: background 160ms ease, color 160ms ease;
+}
+
+tr:not(:first-child):hover td {
+  background: #f7f7fc;
+  color: #34384a;
+}
+
+td:first-child {
+  border-left: 1px solid #f0f1f5;
+  border-radius: 10px 0 0 10px;
+}
+
+td:last-child {
+  border-right: 1px solid #f0f1f5;
+  border-radius: 0 10px 10px 0;
 }
 
 .table-buttons {
   display: flex;
   justify-content: center;
-  gap: 5px;
+  gap: 6px;
 }
 
 .table-buttons a {
   font-size: 12px;
+  font-weight: 700;
   cursor: pointer;
+  border-radius: 8px;
+  padding: 8px 10px;
+  background: var(--primary-light);
+}
+
+.table-buttons a:last-child {
+  color: #3a9a87;
+  background: #eaf8f4;
+}
+
+.table-id {
+  color: #777c8e;
+  font-family: "Courier New", monospace;
+  font-weight: 700;
+}
+
+.account-type,
+.transaction-type {
+  display: inline-block;
+  min-width: 66px;
+  border-radius: 999px;
+  padding: 6px 9px;
+  color: #6255c3;
+  background: #efedff;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.account-type.saving,
+.transaction-type.deposit {
+  color: #278c78;
+  background: #e9f7f3;
+}
+
+.account-type.current,
+.transaction-type.withdraw {
+  color: #c45d68;
+  background: #fdeeef;
 }
 
 @media only screen and (max-width: 767px) {
