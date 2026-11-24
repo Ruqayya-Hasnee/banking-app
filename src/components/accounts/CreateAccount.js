@@ -43,25 +43,32 @@ const CreateAccount = () => {
   return (
     <div className="create-account-wrapper">
       <div className="account-form-wrapper">
-        <p className="top-of-form">Enter account details below</p>
+        <div className="top-of-form">
+          <span className="form-eyebrow">Account setup</span>
+          <h1>Create an account</h1>
+          <p>Enter the account holder details and choose an account type.</p>
+        </div>
         <form className="form" onSubmit={handleSubmit}>
           <div className="input-wrapper">
-            <label>Full Name:</label>
+            <label htmlFor="accountName">Full name</label>
             <input
+              id="accountName"
               type="text"
-              placeholder="Enter full name here.."
+              placeholder="e.g. Alex Morgan"
               className="create-input"
               value={name}
               name="name"
+              autoComplete="name"
               onChange={handleNameChange}
               required
               minLength={5}
             />
           </div>
           <div className="input-wrapper">
-            <label>Account Type:</label>
+            <label htmlFor="accountType">Account type</label>
             <select
-              className="Enter type here..."
+              id="accountType"
+              className="create-input"
               name="type"
               value={type}
               onChange={handleTypeChange}
@@ -74,12 +81,10 @@ const CreateAccount = () => {
           </div>
 
           <div className="add-account-footer">
-            <div className="actions">
+            <div className="account-submit-action">
               <button type="submit">CREATE ACCOUNT</button>
             </div>
-            <div className="actions">
-              <Link to="/accounts">VIEW ALL ACCOUNTS</Link>
-            </div>
+            <Link className="account-cancel-action" to="/accounts">View all accounts</Link>
           </div>
         </form>
       </div>

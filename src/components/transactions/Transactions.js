@@ -17,22 +17,26 @@ const Transactions = () => {
         </div>
         <p>Transactions</p>
         <table>
-          <tr>
-            <th>TransactionId</th>
-            <th>Time</th>
-            <th>Account#</th>
-            <th>Type</th>
-            <th>Amount</th>
-          </tr>
-           {transactions.map((trans) => (
+          <thead>
             <tr>
-              <td>{trans.id}</td>
-              <td>{new Date(trans.time).toDateString()}</td>
-              <td>{trans.accountId}</td>
-              <td>{trans.type}</td>
-              <td>{trans.amount}</td>
+              <th>TransactionId</th>
+              <th>Time</th>
+              <th>Account#</th>
+              <th>Type</th>
+              <th>Amount</th>
             </tr>
-          ))}
+          </thead>
+          <tbody>
+            {transactions.map((trans) => (
+              <tr key={trans.id}>
+                <td data-label="TransactionId"><span className="table-id">#{String(trans.id).slice(-6)}</span></td>
+                <td data-label="Time">{new Date(trans.time).toDateString()}</td>
+                <td data-label="Account#">{trans.accountId}</td>
+                <td data-label="Type"><span className={`transaction-type ${String(trans.type).toLowerCase()}`}>{trans.type}</span></td>
+                <td data-label="Amount"><strong>${Number(trans.amount).toLocaleString()}</strong></td>
+              </tr>
+            ))}
+          </tbody>
         </table>
       </div>
     </div>

@@ -18,27 +18,31 @@ const Accounts = () => {
         </div>
         <p>Accounts</p>
         <table>
-          <tr>
-            <th>Account #</th>
-            <th>Name</th>
-            <th>Registered</th>
-            <th>Account Type</th>
-            <th>Balance</th>
-            <th>Actions</th>
-          </tr>
-          {accounts.map((acc) => (
+          <thead>
             <tr>
-              <td>{acc.id}</td>
-              <td>{acc.name}</td>
-              <td>{new Date(acc.registeredAt).toDateString()}</td>
-              <td>{acc.type}</td>
-              <td>{acc.amount}</td>
-              <td className="table-buttons">
-                <Link to={`/accounts/${acc.id}/deposit`}>Deposit</Link>
-                <Link to={`/accounts/${acc.id}/withdraw`}>Withdraw</Link>
-              </td>
+              <th>Account #</th>
+              <th>Name</th>
+              <th>Registered</th>
+              <th>Account Type</th>
+              <th>Balance</th>
+              <th>Actions</th>
             </tr>
-          ))}
+          </thead>
+          <tbody>
+            {accounts.map((acc) => (
+              <tr key={acc.id}>
+                <td data-label="Account #"><span className="table-id">#{String(acc.id).slice(-6)}</span></td>
+                <td data-label="Name">{acc.name}</td>
+                <td data-label="Registered">{new Date(acc.registeredAt).toDateString()}</td>
+                <td data-label="Account Type"><span className={`account-type ${String(acc.type).toLowerCase()}`}>{acc.type}</span></td>
+                <td data-label="Balance"><strong>${Number(acc.amount).toLocaleString()}</strong></td>
+                <td className="table-buttons">
+                  <Link to={`/accounts/${acc.id}/deposit`}>Deposit</Link>
+                  <Link to={`/accounts/${acc.id}/withdraw`}>Withdraw</Link>
+                </td>
+              </tr>
+            ))}
+          </tbody>
         </table>
       </div>
     </div>
